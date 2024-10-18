@@ -1,4 +1,4 @@
-import { Text, clx } from "@medusajs/ui"
+etgimport { Text, clx } from "@medusajs/ui"
 
 import { getCategoriesList, getCollectionsList } from "@lib/data"
 
@@ -18,7 +18,7 @@ export default async function Footer() {
               href="/"
               className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase"
             >
-              About gofinch
+              About SecretGreen
             </LocalizedClientLink>
 
             {/* New text added just below the "Medusa Store" link with a max width to prevent overflow */}
@@ -26,7 +26,7 @@ export default async function Footer() {
               Welcome to our store, your go-to destination for high-quality, unique products curated with care. We pride ourselves on delivering exceptional customer service, fast shipping, and a seamless shopping experience.
             </p>
             <p className="mt-2 text-ui-fg-subtle text-sm">
-Email: support@gofinch.com.au            </p>
+Email: support@SecretGreen.com.au            </p>
 
           </div>
           <div className="text-small-regular gap-10 md:gap-x-16 grid grid-cols-2 sm:grid-cols-3">
@@ -170,7 +170,7 @@ Email: support@gofinch.com.au            </p>
         </div>
         <div className="flex w-full mb-16 justify-between text-ui-fg-muted">
           <Text className="txt-compact-small">
-            © {new Date().getFullYear()} gofinch.com.au All rights reserved.
+            © {new Date().getFullYear()} SecretGreen.com.au All rights reserved.
           </Text>
           <MedusaCTA />
         </div>
