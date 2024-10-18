@@ -27,7 +27,7 @@ const nextConfig = withStoreConfig({
       },
       {
         protocol: "https",
-        hostname: "medusa-gofinch.s3.ap-southeast-2.amazonaws.com",
+        hostname: "secretgreen.s3.ap-southeast-2.amazonaws.com",
       },
     ],
   },
