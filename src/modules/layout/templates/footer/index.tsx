@@ -1,4 +1,4 @@
-etgimport { Text, clx } from "@medusajs/ui"
+import { Text, clx } from "@medusajs/ui"
 
 import { getCategoriesList, getCollectionsList } from "@lib/data"
 
