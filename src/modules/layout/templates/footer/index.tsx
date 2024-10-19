@@ -10,7 +10,7 @@ export default async function Footer() {
   const { product_categories } = await getCategoriesList(0, 6)
 
   return (
-  <footer className="border-t border-ui-border-base w-full">
+    <footer className="border-t border-ui-border-base w-full">
       <div className="content-container flex flex-col w-full">
         <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between py-40">
           <div className="max-w-xs">
@@ -26,33 +26,27 @@ export default async function Footer() {
               Welcome to our store, your go-to destination for high-quality, unique products curated with care. We pride ourselves on delivering exceptional customer service, fast shipping, and a seamless shopping experience.
             </p>
             <p className="mt-2 text-ui-fg-subtle text-sm">
-Email: support@SecretGreen.com.au            </p>
-
+              Email: support@SecretGreen.com.au
+            </p>
           </div>
           <div className="text-small-regular gap-10 md:gap-x-16 grid grid-cols-2 sm:grid-cols-3">
             {product_categories && product_categories?.length > 0 && (
               <div className="flex flex-col gap-y-2">
-                <span className="txt-small-plus txt-ui-fg-base">
-                  Categories
-                </span>
+                <span className="txt-small-plus txt-ui-fg-base">Categories</span>
                 <ul className="grid grid-cols-1 gap-2" data-testid="footer-categories">
                   {product_categories?.slice(0, 6).map((c) => {
                     if (c.parent_category) {
                       return
                     }
 
-                    const children =
-                      c.category_children?.map((child) => ({
-                        name: child.name,
-                        handle: child.handle,
-                        id: child.id,
-                      })) || null
+                    const children = c.category_children?.map((child) => ({
+                      name: child.name,
+                      handle: child.handle,
+                      id: child.id,
+                    })) || null
 
                     return (
-                      <li
-                        className="flex flex-col gap-2 text-ui-fg-subtle txt-small"
-                        key={c.id}
-                      >
+                      <li className="flex flex-col gap-2 text-ui-fg-subtle txt-small" key={c.id}>
                         <LocalizedClientLink
                           className={clx(
                             "hover:text-ui-fg-base",
@@ -65,18 +59,17 @@ Email: support@SecretGreen.com.au            </p>
                         </LocalizedClientLink>
                         {children && (
                           <ul className="grid grid-cols-1 ml-3 gap-2">
-                            {children &&
-                              children.map((child) => (
-                                <li key={child.id}>
-                                  <LocalizedClientLink
-                                    className="hover:text-ui-fg-base"
-                                    href={`/categories/${child.handle}`}
-                                    data-testid="category-link"
-                                  >
-                                    {child.name}
-                                  </LocalizedClientLink>
-                                </li>
-                              ))}
+                            {children.map((child) => (
+                              <li key={child.id}>
+                                <LocalizedClientLink
+                                  className="hover:text-ui-fg-base"
+                                  href={`/categories/${child.handle}`}
+                                  data-testid="category-link"
+                                >
+                                  {child.name}
+                                </LocalizedClientLink>
+                              </li>
+                            ))}
                           </ul>
                         )}
                       </li>
@@ -87,17 +80,10 @@ Email: support@SecretGreen.com.au            </p>
             )}
             {collections && collections.length > 0 && (
               <div className="flex flex-col gap-y-2">
-                <span className="txt-small-plus txt-ui-fg-base">
-                  Collections
-                </span>
-                <ul
-                  className={clx(
-                    "grid grid-cols-1 gap-2 text-ui-fg-subtle txt-small",
-                    {
-                      "grid-cols-2": (collections?.length || 0) > 3,
-                    }
-                  )}
-                >
+                <span className="txt-small-plus txt-ui-fg-base">Collections</span>
+                <ul className={clx("grid grid-cols-1 gap-2 text-ui-fg-subtle txt-small", {
+                  "grid-cols-2": (collections?.length || 0) > 3,
+                })}>
                   {collections?.slice(0, 6).map((c) => (
                     <li key={c.id}>
                       <LocalizedClientLink
@@ -144,7 +130,7 @@ Email: support@SecretGreen.com.au            </p>
                     Refund Policy
                   </a>
                 </li>
-                 <li>
+                <li>
                   <a
                     href="/shipping-policy"
                     target="_blank"
@@ -175,6 +161,14 @@ Email: support@SecretGreen.com.au            </p>
           <MedusaCTA />
         </div>
       </div>
+
+      {/* Inserted JavaScript for SecretGreen account */}
+      <div dangerouslySetInnerHTML={{ __html: `
+        <script type="text/javascript">
+          var _support = _support || { 'ui': {}, 'user': {} };
+          _support['account'] = '{{ secretgreen }}';
+        </script>
+      `}} />
     </footer>
   )
 }
