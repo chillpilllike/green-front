@@ -162,13 +162,14 @@ export default async function Footer() {
         </div>
       </div>
 
-      {/* Inserted JavaScript for SecretGreen account */}
-      <div dangerouslySetInnerHTML={{ __html: `
-        <script type="text/javascript">
-          var _support = _support || { 'ui': {}, 'user': {} };
-          _support['account'] = '{{ secretgreen }}';
-        </script>
-      `}} />
+      {/* Reamaze Base Installation Script */}
+      <script type="text/javascript" async src="https://cdn.reamaze.com/assets/reamaze.js"></script>
+
+      {/* Reamaze Brand Identification Script */}
+      <script type="text/javascript">
+        var _support = _support || { 'ui': {}, 'user': {} };
+        _support['account'] = '{{ secretgreen }}';
+      </script>
     </footer>
   )
 }
