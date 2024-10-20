@@ -6,7 +6,7 @@ const Hero = () => {
     <div
       className="h-[75vh] w-full border-b border-ui-border-base relative bg-cover bg-center"
       style={{
-        backgroundImage: "url('/images/banner.jpg')", // Add the background image here
+        backgroundImage: "url('https://secretgreen.s3.ap-southeast-2.amazonaws.com/banner-1729405653077.jpg')", // Add the background image here
       }}
     >
       <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:p-32 gap-6">
