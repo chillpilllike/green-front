@@ -97,7 +97,6 @@ const ContactUs = () => {
       {/* Reamaze Contact Form Embed */}
       <div
         data-reamaze-embed="contact"
-        data-reamaze-embed-subject="secretgreen-medusa"
         data-reamaze-embed-form-id="85294"
       ></div>
     </div>
