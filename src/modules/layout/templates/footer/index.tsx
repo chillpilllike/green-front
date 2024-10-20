@@ -2,7 +2,7 @@ import { Text, clx } from "@medusajs/ui"
 import { getCategoriesList, getCollectionsList } from "@lib/data"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import MedusaCTA from "@modules/layout/components/medusa-cta"
-import Script from "next/script" // Import next/script for external scripts
+import Script from "next/script"
 
 export default async function Footer() {
   const { collections } = await getCollectionsList(0, 6)
@@ -10,6 +10,27 @@ export default async function Footer() {
 
   return (
     <>
+      {/* TrustBox External Script */}
+      <Script
+        type="text/javascript"
+        src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
+        async
+      />
+
+      {/* TrustBox Widget - Micro Review Count */}
+      <div className="trustpilot-widget" 
+        data-locale="en-US" 
+        data-template-id="5419b6a8b0d04a076446a9ad" 
+        data-businessunit-id="63abde420cd64197d7e1c9fa" 
+        data-style-height="24px" 
+        data-style-width="100%" 
+        data-min-review-count="0" 
+        data-style-alignment="center"
+        style={{ textAlign: 'center', margin: '20px 0' }}  // Center the widget with margin
+      >
+        <a href="https://www.trustpilot.com/review/secretgreen.com.au" target="_blank" rel="noopener">Trustpilot</a>
+      </div>
+
       {/* Reamaze External Script */}
       <Script
         type="text/javascript"
