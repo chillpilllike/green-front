@@ -27,7 +27,7 @@ const nextConfig = withStoreConfig({
       },
       {
         protocol: "https",
-        hostname: "secretgreen.s3.ap-southeast-2.amazonaws.com",
+        hostname: "secretgreen9.s3.ap-southeast-2.amazonaws.com",
       },
     ],
   },
