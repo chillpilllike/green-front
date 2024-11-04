@@ -18,17 +18,20 @@ export default async function Footer() {
       />
 
       {/* TrustBox Widget - Micro Review Count */}
-      <div className="trustpilot-widget" 
-        data-locale="en-US" 
-        data-template-id="5419b6a8b0d04a076446a9ad" 
-        data-businessunit-id="63abde420cd64197d7e1c9fa" 
-        data-style-height="24px" 
-        data-style-width="100%" 
-        data-min-review-count="0" 
+      <div
+        className="trustpilot-widget"
+        data-locale="en-US"
+        data-template-id="5419b6a8b0d04a076446a9ad"
+        data-businessunit-id="63abde420cd64197d7e1c9fa"
+        data-style-height="24px"
+        data-style-width="100%"
+        data-min-review-count="0"
         data-style-alignment="center"
-        style={{ textAlign: 'center', margin: '20px 0' }}  // Center the widget with margin
+        style={{ textAlign: "center", margin: "20px 0" }}
       >
-        <a href="https://www.trustpilot.com/review/secretgreen.com.au" target="_blank" rel="noopener">Trustpilot</a>
+        <a href="https://www.trustpilot.com/review/secretgreen.com.au" target="_blank" rel="noopener">
+          Trustpilot
+        </a>
       </div>
 
       {/* Reamaze External Script */}
@@ -106,7 +109,7 @@ export default async function Footer() {
                   <ul className="grid grid-cols-1 gap-2" data-testid="footer-categories">
                     {product_categories?.slice(0, 6).map((c) => {
                       if (c.parent_category) {
-                        return
+                        return null
                       }
 
                       const children = c.category_children?.map((child) => ({
